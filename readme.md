@@ -3,9 +3,17 @@ This repository follows the path taken to becoming an Azure Solutions Architect 
 
 The following exams will be required:
 
-<p>
-    DP-200 Implementing an Azure Data Solution <br>
-    DP-201 Designing an Azure Data Solution <br>
-    AZ-300 Azure Architect Technologies <br>
-    AZ-301 Microsoft Azure Architect Design <br>
-</p>
+
+- DP-200 Implementing an Azure Data Solution 
+- DP-201 Designing an Azure Data Solution 
+- AZ-300 Azure Architect Technologies 
+- AZ-301 Microsoft Azure Architect Design 
+
+
+
+
+# General Notes
+
+    az account show 
+    
+Get the details of a subscription.
