@@ -11,12 +11,12 @@ class Storage(AzureBase):
             tenant_id=tenant_id,
             client_id=client_id,
             secret_id=secret_id
-            )
+        )
 
         self.subscription_id = subscription_id
         self.Storage_client = StorageManagementClient(
             credentials=self.credentials, 
             subscription_id=subscription_id
-            )
+        )
 
     

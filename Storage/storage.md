@@ -60,11 +60,15 @@ Storage account defines policy that applies to all storage services in the accou
 
 ## Replication
 
-* Strategy used to make copies of you data.  
+### Single Region Replication
 
-* LRS - Locally redundant storage (default; three copies of data stored locally)
+* LRS - Locally redundant storage, three copies single availability zone. (default; three copies of data stored locally)
+* ZRS - Syncronously replicates data within the same region across three availabilty zones.
 
-* GRS - Geo-redundant storage (geographically dispersed)
+### Multiple Region Replication
+
+* GRS - Geo-redundant storage uses LRS in primary region syncronously and copies data to secondary region using LRS asyncronously.
+* GZRS - Geo-redundant storage uses ZRS in primary region syncronously and copies data to seconary region asyncronously.
 
 ## Access tier
 
@@ -90,3 +94,40 @@ You need one storage account for every group of settings to apply
 ## Tolerance for management overhead
 
 A typical strategy is to start with an analysis of your data and create partitions that share characteristics like location, billing, and replication strategy, and then create one storage account for each partition.
+
+
+## Provision Non-Relational Data Store (DP200) 
+
+Create storage account:
+
+    az storage account create 
+        --name (required)
+        --resource-group (required)
+        --location (optional)
+        --sku ( optional, 
+                values {
+                    Premium_LRS, 
+                    Premium_ZRS, 
+                    Standard_GRS, 
+                    Standard_GZRS, 
+                    Standard_LRS, 
+                    Standard_RAGRS, 
+                    Standard_RAGZRS, 
+                    Standard_ZRS
+                }
+            )
+        --kind (optional,
+                values { 
+                    BlobStorage, 
+                    BlockBlobStorage, 
+                    FileStorage, 
+                    Storage, 
+                    StorageV2
+                }
+            )5
+
+Delete storage account:
+
+    az storage account delete
+        --name (optional)
+        --resource-group (optional)
