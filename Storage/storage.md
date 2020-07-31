@@ -63,12 +63,14 @@ Storage account defines policy that applies to all storage services in the accou
 ### Single Region Replication
 
 * LRS - Locally redundant storage, three copies single availability zone. (default; three copies of data stored locally)
-* ZRS - Syncronously replicates data within the same region across three availabilty zones.
+* ZRS - Zone redundant storage, syncronously replicates data within the primary region across three availabilty zones.
 
 ### Multiple Region Replication
 
 * GRS - Geo-redundant storage uses LRS in primary region syncronously and copies data to secondary region using LRS asyncronously.
+* RA-GRS - Read access geo-redundant storage; same as GRS but allows read access to secondary region.
 * GZRS - Geo-redundant storage uses ZRS in primary region syncronously and copies data to seconary region asyncronously.
+* RA-GZRS - Read access geo-redundant storage; same as GZRS but allows read access to secondary region.
 
 ## Access tier
 
@@ -124,7 +126,7 @@ Create storage account:
                     Storage, 
                     StorageV2
                 }
-            )5
+            )
 
 Delete storage account:
 

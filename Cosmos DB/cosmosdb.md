@@ -26,7 +26,7 @@
 
 ## Multiple Master Replication
 
-*only works in premium tier
+**only works in premium-tier
 
 ### [az cosmostdb create](https://docs.microsoft.com/en-us/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-create)
 
@@ -35,13 +35,18 @@
         --resource-group (required)
         --location (optional)
         --kind (optional, 
-            Values {
+            values {
                 GlobalDocumentDB,
                 MongoDB,
                 Parse
             } 
         )
         --default-consistency-level
-        --locations
-        --locations
+        --locations (optional,
+            values {
+                regionName=(string),
+                failoverPriority=(int),
+                isZoneRedundant=(bool)
+            }
+        )
         --enable-multiple-write-locations

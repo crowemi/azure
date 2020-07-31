@@ -1,5 +1,7 @@
-# General Notes
+# Implement Data Storage Solutions (40-45%)
 
-    az account show 
-    
-PowerShell Get the details of a subscription.
+## Implement Non-Relational Data Stores
+
+## Implement Relational Data Stores
+
+## Manage Data Security
